@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Figtree", sans-serif;
+}
+
+:root {
+    --color-blue: #0084FF;
+    --color-yellow: #FBFF00;
+    --color-red: #FF0000;
+    --color-green: #00A650;
+
+    --color-background: #EBEBEB; 
+}
