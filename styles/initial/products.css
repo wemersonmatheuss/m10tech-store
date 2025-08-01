@@ -1,0 +1,153 @@
+.products {
+    margin: 68px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.products .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.products .title h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.products .title a {
+    text-decoration: none;
+
+    color: var(--color-red);
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product {
+    max-width: 237px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product .image img {
+    width: 100%;
+}
+
+.product .description {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product .description p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product .description p span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.product .color {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product .color p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.product .color select {
+    padding: 10px 35px 10px 10px; /* Espaço extra à direita para a seta */
+    background-color: var(--color-background);
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    /* Remove a seta padrão do select no Chrome */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Adiciona a seta SVG personalizada à direita (agora para baixo) */
+    background-image: url('data:image/svg+xml;utf8,<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px 15px;
+    cursor: pointer;
+
+}
+
+/* Para corrigir o alinhamento em navegadores que ainda mostram a seta padrão */
+.product .color {
+    position: relative;
+}
+
+.product .price {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product .price h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.product .price p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product .price p:nth-child(2) span {
+    color: var(--color-red);
+}
+
+.product .price p:nth-child(3) span {
+    color: var(--color-green);
+}
+
+.product .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product .button button {
+    padding: 14px 40px;
+
+    background-color: var(--color-blue);
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: opacity 0.3s ease-in-out;
+}
