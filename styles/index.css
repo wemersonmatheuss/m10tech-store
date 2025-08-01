@@ -1,6 +1,7 @@
 @import url(./global.css);
 @import url(./header.css);
 @import url(./nav.css);
-@import url(./initial/banner.css);
-@import url(./initial/products.css);
-@import url(./initial/info.css);
+@import url(./banner.css);
+@import url(./products.css);
+@import url(./info.css);
+@import url(./footer.css);

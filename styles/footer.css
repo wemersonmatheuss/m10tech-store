@@ -1,0 +1,37 @@
+footer {
+    padding: 100px 125px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+}
+
+footer .top {
+    display: flex;
+    gap: 30px;
+
+    width: 100%;
+}
+
+footer .top .infos-footer {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+footer .top .infos-footer .info-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 30px;
+}

@@ -1,0 +1,105 @@
+@import url(./global.css);
+@import url(./products.css);
+
+header {
+    width: 100%;
+    height: auto;
+
+    background-color: var(--color-blue);
+    color: white;
+
+    padding-block: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header p span {
+    color: var(--color-yellow);
+}
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 125px;
+}
+
+nav .logo a img {
+    width: 73px;
+    height: auto;
+}
+
+nav .navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav .navigation a {
+    text-decoration: none;
+
+    color: #000;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: color 0.3s ease-in-out;
+}
+
+nav .navigation a:hover {
+    color: var(--color-blue);
+}
+
+nav .button button {
+    padding: 13px 30px;
+
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    background-color: var(--color-blue);
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+.products {
+    margin-top: 40px;
+}
+
+.product {
+    margin-top: 40px;
+
+}
