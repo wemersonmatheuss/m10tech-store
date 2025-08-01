@@ -86,6 +86,7 @@
     font-size: 15px;
     font-weight: 400;
     border: none;
+    outline: none;
     border-radius: 10px;
     /* Remove a seta padrão do select no Chrome */
     -webkit-appearance: none;
@@ -98,6 +99,10 @@
     background-size: 15px 15px;
     cursor: pointer;
 
+}
+
+.product .color select:focus {
+    border: 1px solid var(--color-blue);
 }
 
 /* Para corrigir o alinhamento em navegadores que ainda mostram a seta padrão */
