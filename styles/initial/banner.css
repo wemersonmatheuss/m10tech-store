@@ -1,0 +1,22 @@
+.banner {
+    position: relative;
+    min-height: 200px;
+}
+
+.banner img {
+    width: 100%;
+    /* Começa invisível, exceto o ativo */
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 1s ease;
+    z-index: 0;
+}
+
+/* Banner ativo aparece com fade */
+.banner img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
