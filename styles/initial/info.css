@@ -1,0 +1,46 @@
+.infos {
+    padding: 60px 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff;
+}
+
+.infos .info {
+    max-width: 292px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.infos .info img {
+    width: 66px;
+    height: 66px;
+}
+
+.infos .info h4 {
+    font-size: 18px;
+    font-weight: 600;
+
+    text-align: center;
+} 
+
+.infos .info p {
+    font-size: 16px;
+    font-weight: 400;
+
+    text-align: center;
+}
+
+.line {
+    width: 2px;
+    height: 100px;
+
+    background-color: var(--color-background);
+}
