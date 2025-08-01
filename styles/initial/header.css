@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    height: auto;
+
+    background-color: var(--color-blue);
+    color: white;
+
+    padding-block: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header p span {
+    color: var(--color-yellow);
+}
