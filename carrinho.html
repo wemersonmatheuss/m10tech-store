@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRINHO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <div class="main-container">
+        <main>
+            <div class="lista-carrinho" id="itnsCarrinho"></div>
+
+            <div class="resumo">
+                <label for="nomeCliente"><strong>Seu nome:</strong></label
+                ><br />
+                <input
+                    type="text"
+                    id="nomeCliente"
+                    placeholder="Digite seu nome"
+                /><br /><br />
+
+                <p><strong>Total:</strong> <span id="totalCarrinho">R$ 0,00</span></p>
+                <button class="btn-enviar" onclick="enviarPedido()">
+                    Enviar pedido pelo WhatsApp
+                </button>
+        </div>
+        </main>
+        
+    </div>
+    
+</body>
+<script src="./script.js"></script>
+</html>

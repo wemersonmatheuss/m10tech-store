@@ -27,3 +27,137 @@ if (banners.length > 0) {
     }, 5000);
 }
 // Fim do script de rotação automática de banners com animação
+
+
+
+// ================= CARRINHO DE COMPRAS =====================
+// Carrinho armazenado em localStorage para persistência
+const STORAGE_KEY = 'm10tech_carrinho';
+let carrinho = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+// Função para formatar valor para BRL
+function formatarValor(valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+// Função para atualizar o carrinho na página do carrinho e badge
+function atualizarCarrinhoHTML() {
+    // Atualiza badge do carrinho em todas as páginas
+    const badge = document.getElementById('badge-carrinho');
+    if (badge) {
+        if (carrinho.length > 0) {
+            badge.textContent = carrinho.length;
+            badge.style.display = 'flex';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+
+    // Atualiza lista de itens e total na página do carrinho
+    const lista = document.getElementById('itnsCarrinho');
+    const totalSpan = document.getElementById('totalCarrinho');
+    if (!lista || !totalSpan) return;
+    lista.innerHTML = '';
+    let total = 0;
+    carrinho.forEach(item => {
+        total += item.valor;
+        const div = document.createElement('div');
+        div.className = 'item-carrinho';
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.gap = '12px';
+        // Renderiza descrição de forma mais legível
+        let descHtml = '';
+        if (item.descricao) {
+            // Remove tags <p> e <span> duplicadas, deixa só texto
+            descHtml = item.descricao.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        }
+        div.innerHTML = `
+            <img src="${item.img}" alt="${item.modelo}" style="width:70px;height:70px;object-fit:cover;border-radius:8px;">
+            <div style="font-size:15px;">
+                <strong>${item.modelo}</strong><br>
+                ${descHtml ? descHtml + '<br>' : ''}
+                Cor: ${item.cor}<br>
+                Valor: ${formatarValor(item.valor)}
+            </div>
+        `;
+        lista.appendChild(div);
+    });
+    totalSpan.textContent = formatarValor(total);
+}
+
+// Função para adicionar item ao carrinho
+function adicionarAoCarrinho(produto) {
+    carrinho.push(produto);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(carrinho));
+    // Atualiza carrinho se estiver na página do carrinho
+    atualizarCarrinhoHTML();
+    alert('Produto adicionado ao carrinho!');
+}
+
+// Função para extrair informações do produto ao clicar em comprar
+function obterInfoProduto(btn) {
+    const product = btn.closest('.product');
+    if (!product) return;
+    const img = product.querySelector('.image img');
+    // Pega todos os textos da descrição
+    const descPs = product.querySelectorAll('.description p');
+    let descricao = '';
+    descPs.forEach(p => {
+        descricao += p.outerHTML + ' ';
+    });
+    // Modelo (primeiro p)
+    const modelo = descPs[0]?.textContent.replace('Modelo:', '').trim() || 'Produto';
+    const corSelect = product.querySelector('.color select');
+    const cor = corSelect ? corSelect.value || corSelect.options[corSelect.selectedIndex].text : 'Não selecionada';
+    const valorText = product.querySelector('.price h3')?.textContent.replace(/[^\d,]/g, '').replace(',', '.') || '0';
+    const valor = parseFloat(valorText);
+    return {
+        img: img ? img.src : '',
+        modelo,
+        descricao,
+        cor,
+        valor: isNaN(valor) ? 0 : valor
+    };
+}
+
+// Adiciona evento a todos os botões de comprar
+document.querySelectorAll('.product .button button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const produto = obterInfoProduto(this);
+        if (!produto.cor || produto.cor.toLowerCase().includes('selecione')) {
+            alert('Selecione uma cor antes de adicionar ao carrinho!');
+            return;
+        }
+        adicionarAoCarrinho(produto);
+        atualizarCarrinhoHTML(); // Atualiza badge imediatamente
+    });
+});
+
+// Atualiza carrinho e badge ao abrir qualquer página
+atualizarCarrinhoHTML();
+
+// Função para enviar pedido pelo WhatsApp
+function enviarPedido() {
+    const nome = document.getElementById('nomeCliente')?.value.trim();
+    if (!nome) {
+        alert('Digite seu nome!');
+        return;
+    }
+    if (!carrinho.length) {
+        alert('Seu carrinho está vazio!');
+        return;
+    }
+    let mensagem = `Olá, meu nome é ${nome}! Gostaria de fazer o pedido:\n`;
+    let total = 0;
+    carrinho.forEach((item, i) => {
+        mensagem += `\n${i+1}. ${item.modelo} - Cor: ${item.cor} - Valor: ${formatarValor(item.valor)}`;
+        total += item.valor;
+    });
+    mensagem += `\n\nTotal: ${formatarValor(total)}`;
+    // Coloque o número do WhatsApp do dono da loja abaixo (apenas números com DDD, ex: 12991548197)
+    const numero = '12991548197';
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+}
+// ================= FIM CARRINHO =====================

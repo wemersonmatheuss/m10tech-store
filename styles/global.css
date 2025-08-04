@@ -33,3 +33,9 @@ body, html {
     scroll-behavior: smooth;
 }
 
+.carrinho {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
