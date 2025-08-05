@@ -1,5 +1,5 @@
 footer {
-    padding: 100px 125px;
+    padding: 80px 125px;
 
     display: flex;
     flex-direction: column;
@@ -10,9 +10,13 @@ footer {
 
 footer .top {
     display: flex;
-    gap: 30px;
+    gap: 80px;
 
     width: 100%;
+}
+
+footer .top .logo a img {
+    width: 80px;
 }
 
 footer .top .infos-footer {
@@ -28,10 +32,19 @@ footer .top .infos-footer .info-footer {
     gap: 10px;
 }
 
+footer .top .infos-footer .info-footer a {
+    color: var(--color-blue);
+}
+
+
 footer .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     margin-top: 30px;
+}
+
+footer .bottom a {
+    color: var(--color-blue);
 }
