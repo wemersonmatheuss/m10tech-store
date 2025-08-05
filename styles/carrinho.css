@@ -3,6 +3,23 @@
     flex-direction: row;
     gap: 0;
     width: 100%;
+
+    margin-top: 40px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+.title h1 {
+    font-size: 40px;
+    font-weight: 500;
+
+    color: var(--color-blue);
 }
 
 .lista-carrinho {

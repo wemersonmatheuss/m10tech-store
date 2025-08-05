@@ -59,7 +59,7 @@ function atualizarCarrinhoHTML() {
     if (!lista || !totalSpan) return;
     lista.innerHTML = '';
     let total = 0;
-    carrinho.forEach(item => {
+    carrinho.forEach((item, idx) => {
         total += item.valor;
         const div = document.createElement('div');
         div.className = 'item-carrinho';
@@ -69,21 +69,35 @@ function atualizarCarrinhoHTML() {
         // Renderiza descrição de forma mais legível
         let descHtml = '';
         if (item.descricao) {
-            // Remove tags <p> e <span> duplicadas, deixa só texto
             descHtml = item.descricao.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
         }
         div.innerHTML = `
             <img src="${item.img}" alt="${item.modelo}" style="width:70px;height:70px;object-fit:cover;border-radius:8px;">
-            <div style="font-size:15px;">
+            <div style="font-size:15px;flex:1;">
                 <strong>${item.modelo}</strong><br>
                 ${descHtml ? descHtml + '<br>' : ''}
                 Cor: ${item.cor}<br>
                 Valor: ${formatarValor(item.valor)}
             </div>
+            <button class="btn-remove-carrinho" data-idx="${idx}" title="Remover do carrinho" style="background:none;border:none;cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;">
+                <img src="./assets/lixeira-de-reciclagem 1.svg" alt="Remover" style="width:28px;height:28px;object-fit:contain;">
+            </button>
         `;
         lista.appendChild(div);
     });
     totalSpan.textContent = formatarValor(total);
+
+    // Adiciona evento para remover item
+    document.querySelectorAll('.btn-remove-carrinho').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const idx = parseInt(this.getAttribute('data-idx'));
+            if (!isNaN(idx)) {
+                carrinho.splice(idx, 1);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(carrinho));
+                atualizarCarrinhoHTML();
+            }
+        });
+    });
 }
 
 // Função para adicionar item ao carrinho
