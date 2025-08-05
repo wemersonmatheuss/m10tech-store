@@ -1,3 +1,13 @@
+// Botão do nav: Entre em Contato abre WhatsApp com mensagem padrão
+document.querySelectorAll('nav .button button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        // WhatsApp do cliente
+        const numero = '12991548197';
+        const mensagem = 'Olá, quero mais informações sobre os produtos';
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+    });
+});
 // Seleciona o container dos banners
 const bannerContainer = document.querySelector('.banner');
 // Seleciona todas as imagens dentro do banner
