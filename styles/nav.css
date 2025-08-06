@@ -64,3 +64,9 @@ nav .button button {
         padding-inline: 40px;
     }
 }
+
+@media screen and (max-width: 769px) {
+    nav {
+        padding-inline: 20px;
+    }
+}
