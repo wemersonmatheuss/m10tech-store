@@ -44,3 +44,18 @@
 
     background-color: var(--color-background);
 }
+
+@media screen and (max-width: 1140px) {
+    .infos {
+        padding-inline: 60px;
+    }
+}
+
+@media screen and (max-width: 884px) {
+    .infos {
+        padding-inline: 20px;
+
+        flex-direction: column;
+        gap: 20px;
+    }
+}
