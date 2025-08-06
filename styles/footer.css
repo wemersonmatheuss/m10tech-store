@@ -48,3 +48,13 @@ footer .bottom {
 footer .bottom a {
     color: var(--color-blue);
 }
+
+@media screen and (max-width: 884px) {
+    footer {
+        padding-inline: 60px;
+    }
+
+    footer .top {
+        gap: 40px;
+    }
+}

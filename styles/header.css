@@ -21,7 +21,7 @@ header p span {
     color: var(--color-yellow);
 }
 
-@media screen and (max-width: 884px) {
+@media screen and (max-width: 885px) {
     header p {
         font-size: 14px;
     }
