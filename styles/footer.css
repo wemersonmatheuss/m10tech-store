@@ -49,12 +49,34 @@ footer .bottom a {
     color: var(--color-blue);
 }
 
-@media screen and (max-width: 884px) {
+@media screen and (max-width: 885px) {
     footer {
         padding-inline: 60px;
     }
 
     footer .top {
         gap: 40px;
+    }
+}
+
+@media screen and (max-width: 801px) {
+    footer {
+        padding: 40px;
+    }
+
+    footer .top {
+        gap: 10px;
+    }
+
+    footer .top .logo a img {
+        width: 60px;
+    }
+
+    footer .top .infos-footer .info-footer h3 {
+        font-size: 16px;
+    }
+
+    footer .top .infos-footer .info-footer p, a {
+        font-size: 14px;
     }
 }

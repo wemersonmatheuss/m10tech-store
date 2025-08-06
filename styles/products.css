@@ -192,3 +192,10 @@
         width: 220px;
     }
 }
+
+@media screen and (max-width: 801px) {
+    .products {
+        margin-inline: 40px;
+        margin-bottom: 30px;
+    }
+}
