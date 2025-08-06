@@ -106,6 +106,16 @@
 
 }
 
+.product .color select option:nth-child(3) {
+    background-color: var(--color-blue);
+    color: #fff;
+}
+
+.product .color select option:nth-child(4) {
+    background-color: #000;
+    color: #fff;
+}
+
 .product .color select:focus {
     border: 1px solid var(--color-blue);
 }
