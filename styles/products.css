@@ -215,3 +215,21 @@
         height: 200px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .products {
+        padding: 15px;
+    }
+
+    #productTwo {
+        display: none;
+    }
+
+    #productTree {
+        display: none;
+    }
+
+    .all-products {
+        justify-content: center;
+    }
+}

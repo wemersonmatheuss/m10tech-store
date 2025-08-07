@@ -1,3 +1,52 @@
+// ========== MENU MOBILE NAV ========== 
+// Mostra/esconde o menu mobile ao clicar no ícone do menu hamburguer
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleciona a div.mobile
+  const mobileMenu = document.querySelector('.mobile');
+  if (!mobileMenu) return;
+  // Seleciona ícones do menu hamburguer e do X
+  const menuIcon = mobileMenu.querySelector('.menu-hamburguer');
+  const closeIcon = mobileMenu.querySelector('.menu-close');
+  // Seleciona a navegação dentro do mobile
+  const navMobile = mobileMenu.querySelector('.navigation');
+  if (!menuIcon || !closeIcon || !navMobile) return;
+
+  // Função para abrir o menu mobile
+  function openMobileMenu() {
+    navMobile.classList.add('open');
+    menuIcon.style.display = 'none';
+    closeIcon.style.display = 'block';
+  }
+  // Função para fechar o menu mobile
+  function closeMobileMenu() {
+    navMobile.classList.remove('open');
+    menuIcon.style.display = 'block';
+    closeIcon.style.display = 'none';
+  }
+
+  // Ao clicar no ícone do menu hamburguer, abre o menu
+  menuIcon.addEventListener('click', function() {
+    openMobileMenu();
+  });
+  // Ao clicar no ícone de X, fecha o menu
+  closeIcon.addEventListener('click', function() {
+    closeMobileMenu();
+  });
+
+  // Fecha o menu mobile ao clicar fora dele
+  document.addEventListener('click', function(e) {
+    if (!mobileMenu.contains(e.target) && navMobile.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Fecha o menu ao clicar em qualquer link ou botão dentro do menu
+  navMobile.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', function() {
+      closeMobileMenu();
+    });
+  });
+});
 // Botão do nav: Entre em Contato abre WhatsApp com mensagem padrão
 document.querySelectorAll('nav .button button').forEach(btn => {
     btn.addEventListener('click', function(e) {

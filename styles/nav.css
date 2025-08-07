@@ -1,3 +1,14 @@
+/* Ícone de fechar menu mobile */
+.menu-close {
+  display: none;
+}
+
+/* ========== MENU MOBILE NAV ========== */
+.mobile {
+  display: none;
+}
+
+
 nav {
     width: 100%;
     height: auto;
@@ -68,5 +79,84 @@ nav .button button {
 @media screen and (max-width: 769px) {
     nav {
         padding-inline: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mobile {
+        display: block;
+        position: relative;
+    }
+
+    nav #navigation {
+        display: none;
+    }
+
+    #buttonOne {
+        display: none;
+    }
+
+    .mobile .navigation {
+        display: none;
+        position: absolute;
+        top: 48px;
+        right: -20px;
+        width: 100vw;
+        background: #0084FF;
+        border-radius: 0 0 12px 12px;
+        padding: 24px 0 16px 0;
+        z-index: 99;
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .mobile .navigation.open {
+        display: flex;
+    }
+
+    .mobile img {
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+    }
+
+    .mobile .button {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile .button button {
+        padding: 12px 32px;
+        font-size: 17px;
+        border-radius: 8px;
+        background: #fff;
+        color: #000;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile .navigation a {
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 8px 0;
+    }
+
+
+
+    .menu-close {
+        display: none;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        z-index: 100;
+    }
+  
+    .mobile .navigation.open .menu-close {
+        display: block;
     }
 }
