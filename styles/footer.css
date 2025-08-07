@@ -85,10 +85,34 @@ footer .bottom a {
     footer {
         padding: 20px;
     }
-    
+
     footer .top {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+
+    footer .top .infos-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    footer .top .infos-footer .info-footer h3 {
+        text-align: center;
+    }
+
+    footer .top .infos-footer .info-footer p, a {
+        text-align: center;
+
+    }
+
+    footer .bottom {
+        flex-direction: column;
+
+        gap: 20px;
     }
 }

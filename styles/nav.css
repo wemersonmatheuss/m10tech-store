@@ -83,6 +83,11 @@ nav .button button {
 }
 
 @media screen and (max-width: 500px) {
+    nav .logo a img {
+        width: 50px;
+        height: auto;
+    }
+
     .mobile {
         display: block;
         position: relative;
