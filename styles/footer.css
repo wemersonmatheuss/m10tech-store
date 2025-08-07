@@ -80,3 +80,15 @@ footer .bottom a {
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    footer {
+        padding: 20px;
+    }
+    
+    footer .top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
