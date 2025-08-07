@@ -39,3 +39,10 @@ body, html {
     right: 50px;
 }
 
+@media screen and (max-width: 500px) {
+    .carrinho {
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
