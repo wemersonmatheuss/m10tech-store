@@ -221,14 +221,18 @@ function enviarPedido() {
         alert('Seu carrinho está vazio!');
         return;
     }
-    let mensagem = `Olá, meu nome é ${nome}! Gostaria de fazer o pedido:\n`;
+
+    let mensagem = `👋 Olá, meu nome é *${nome}*!\n\n🛒 Gostaria de fazer o seguinte pedido:\n`;
     let total = 0;
+
     carrinho.forEach((item, i) => {
-        mensagem += `\n${i+1}. ${item.modelo} - Cor: ${item.cor} - Valor: ${formatarValor(item.valor)}`;
+        mensagem += `\n${i+1}. 📦 *${item.modelo}* \n   🎨 Cor: ${item.cor} \n   💰 Valor: ${formatarValor(item.valor)}`;
         total += item.valor;
     });
-    mensagem += `\n\nTotal: ${formatarValor(total)}`;
-    // Coloque o número do WhatsApp do dono da loja abaixo (apenas números com DDD, ex: 12991548197)
+
+    mensagem += `\n\n📦 *Total do pedido:* ${formatarValor(total)}\n\n✅ Aguardo a confirmação!`;
+
+    // Número do WhatsApp
     const numero = '12991548197';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
