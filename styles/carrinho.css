@@ -93,3 +93,26 @@
 
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+    .main-container main {
+        flex-direction: column;
+    }
+
+    .title {
+        margin: 20px;
+    }
+
+    .title h1 {
+        font-size: 34px;
+    }
+
+    .resumo label {
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .resumo p {
+        font-size: 20px;
+    }
+}
