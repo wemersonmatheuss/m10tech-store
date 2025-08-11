@@ -29,7 +29,7 @@
 
     color: var(--color-blue);
 
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -219,6 +219,14 @@
 @media screen and (max-width: 500px) {
     .products {
         padding: 15px;
+    }
+
+    .products .title {
+        margin: 0;
+    }
+
+    .products .title a {
+        font-size: 16px;
     }
 
     #productTwo {
