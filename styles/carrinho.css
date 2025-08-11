@@ -72,6 +72,10 @@
     margin-bottom: 0;
 }
 
+.resumo input:focus {
+    border: 1px solid var(--color-blue);
+}
+
 .resumo p {
     font-size: 24px;
     font-weight: 500;
