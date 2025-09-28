@@ -233,7 +233,7 @@ function enviarPedido() {
     mensagem += `\n\n📦 *Total do pedido:* ${formatarValor(total)}\n\n✅ Aguardo a confirmação!`;
 
     // Número do WhatsApp
-    const numero = '12991548197';
+    const numero = '12991017376';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
 }
