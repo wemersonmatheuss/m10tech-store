@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('nav .button button').forEach(btn => {
     btn.addEventListener('click', function(e) {
         // WhatsApp do cliente
-        const numero = '12991548197';
+        const numero = '12991017376';
         const mensagem = 'Olá, quero mais informações sobre os produtos';
         const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
         window.open(url, '_blank');
